@@ -1,0 +1,214 @@
+import  java.util.*;
+public class Main2 {
+//    static ArrayList<Integer> primes;
+//    static {primes = getPrimesFromSieve(sieve(1000000));}
+    static  Scanner sc = new Scanner(System.in);
+    public  static void main(String [] apple){
+
+        int t = sc.nextInt();
+        while (t-->0){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        sc.close();
+
+
+
+    }
+    public static ArrayList<Integer> getPrimesFromSieve(boolean[] sieve) {
+        ArrayList<Integer> primesList = new ArrayList<>();
+
+        for (int i = 2; i < sieve.length; i++) {
+            if (sieve[i]) {
+                primesList.add(i);
+            }
+        }
+
+        return primesList;
+    }
+
+    static final long MOD = 1_000_000_007;
+    static long modAdd(long a, long b) {
+        return (a + b) % MOD;
+    }
+    static long modMul(long a, long b) {
+        return (a * b) % MOD;
+    }
+    static long gcd(long a, long b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    static long lcm(long a, long b) {
+        return (a / gcd(a, b)) * b;
+    }
+    static boolean[] sieve(int n) {
+        boolean[] prime = new boolean[n + 1];
+        Arrays.fill(prime, true);
+        prime[0] = prime[1] = false;
+
+        for (int i = 2; (long)i * i <= n; i++) {
+            if (prime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    prime[j] = false;
+                }
+            }
+        }
+        return prime;
+    }
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    public static int lowerBound(long[] arr, long target) {
+        int left = 0, right = arr.length;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+    public static int lowerBound(int[] arr, int target) {
+        int left = 0, right = arr.length;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+    public static int upperBound(long[] arr, long target) {
+        int left = 0, right = arr.length;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] <= target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+    public static int upperBound(int [] arr, int target) {
+        int left = 0, right = arr.length;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] <= target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        return left;
+    }
+    public  static void  printArr(int[] arr){
+        System.out.print("[ ");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println("]");
+    }
+    public  static void  printArr(long[] arr){
+        System.out.print("[ ");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println("]");
+    }
+    public static long[] prefixSum(long[] arr) {
+        int n = arr.length;
+        long[] prefix = new long[n];
+        prefix[0] = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+        return prefix;
+    }
+    public static long[] prefixSum(int[] arr) {
+        int n = arr.length;
+        long[] prefix = new long[n];
+        prefix[0] = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+        return prefix;
+    }
+    static int[] takeIntArray(int n) {
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        return arr;
+    }
+    static long[] takeLongArray(int n) {
+        long[] arr = new long[n];
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextLong();
+        }
+        return arr;
+    }
+    static ArrayList<Integer> takeIntArrayList(int n) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+        return list;
+    }
+    static ArrayList<Long> takeLongArrayList(int n) {
+        ArrayList<Long> list = new ArrayList<>();
+        for(int i = 0; i < n; i++) {
+            list.add(sc.nextLong());
+        }
+        return list;
+    }
+
+
+}
