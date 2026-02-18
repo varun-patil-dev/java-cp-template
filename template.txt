@@ -1,22 +1,12 @@
 import  java.util.*;
-public class Main2 {
+public class Main1 {
 //    static ArrayList<Integer> primes;
 //    static {primes = getPrimesFromSieve(sieve(1000000));}
     static  Scanner sc = new Scanner(System.in);
     public  static void main(String [] apple){
-
         int t = sc.nextInt();
         while (t-->0){
-
-
-
-
-
-
-
-
-
-
+          
 
 
 
@@ -209,6 +199,68 @@ public class Main2 {
         }
         return list;
     }
+    public static int maxInt(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+    public static int minInt(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+
+        int min = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        return min;
+    }
+    public static long maxLong(long[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+
+        long max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+    public static long minLong(long[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty");
+        }
+
+        long min = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        return min;
+    }
+
+
 
 
 }
